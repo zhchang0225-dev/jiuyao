@@ -1,434 +1,1551 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>张昌 · 平面设计师 | 个人简历</title>
-  <!-- 内联 SVG favicon：蓝色圆底白色字母 Z -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%235B8DEF'/%3E%3Ctext x='32' y='43' font-size='30' font-family='Arial,sans-serif' font-weight='bold' fill='white' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E" />
-  <style>
-    :root {
-      --primary: #5B8DEF;
-      --primary-dark: #4a7de0;
-      --primary-soft: #eaf1fe;
-      --bg: #f7f9fc;
-      --card: #ffffff;
-      --text: #1f2937;
-      --text-muted: #6b7280;
-      --border: #e5e9f0;
-      --shadow: 0 8px 30px rgba(91, 141, 239, 0.08);
-      --radius: 16px;
-      --maxw: 880px;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
-        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.75;
-      -webkit-font-smoothing: antialiased;
-    }
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>张昌 · 平面设计师 | 个人简历</title>
+    <!-- 内联 SVG favicon：蓝色圆底白色字母 Z -->
+    <link rel="icon"
+          href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%235B8DEF'/%3E%3Ctext x='32' y='43' font-size='30' font-family='Arial,sans-serif' font-weight='bold' fill='white' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E"/>
+    <style>
+        :root {
+            --primary: #5B8DEF;
+            --primary-dark: #4a7de0;
+            --primary-soft: #eaf1fe;
+            --bg: #f7f9fc;
+            --card: #ffffff;
+            --text: #1f2937;
+            --text-muted: #6b7280;
+            --border: #e5e9f0;
+            --shadow: 0 8px 30px rgba(91, 141, 239, 0.08);
+            --radius: 16px;
+            --maxw: 880px;
+        }
 
-    /* ===== 顶部导航 ===== */
-    .nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: saturate(180%) blur(12px);
-      -webkit-backdrop-filter: saturate(180%) blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-inner {
-      max-width: var(--maxw); margin: 0 auto; padding: 0 24px; height: 64px;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .brand { font-weight: 700; font-size: 18px; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 10px; }
-    .brand .dot {
-      width: 30px; height: 30px; border-radius: 9px; background: var(--primary);
-      color: #fff; display: grid; place-items: center; font-size: 15px; font-weight: 700;
-    }
-    .brand span.name { color: var(--text); }
-    .nav-links { display: flex; gap: 6px; list-style: none; }
-    .nav-links a {
-      text-decoration: none; color: var(--text-muted); font-size: 15px;
-      padding: 8px 14px; border-radius: 10px; transition: all .2s ease;
-    }
-    .nav-links a:hover { color: var(--primary); background: var(--primary-soft); }
-    .nav-links a.active { color: var(--primary); font-weight: 600; }
-    .nav-toggle { display: none; background: none; border: none; cursor: pointer; width: 40px; height: 40px; border-radius: 10px; place-items: center; }
-    .nav-toggle:hover { background: var(--primary-soft); }
-    .nav-toggle span { display: block; width: 20px; height: 2px; background: var(--text); position: relative; transition: all .25s ease; }
-    .nav-toggle span::before, .nav-toggle span::after { content: ""; position: absolute; left: 0; width: 20px; height: 2px; background: var(--text); transition: all .25s ease; }
-    .nav-toggle span::before { top: -6px; }
-    .nav-toggle span::after { top: 6px; }
-    .nav-toggle.open span { background: transparent; }
-    .nav-toggle.open span::before { top: 0; transform: rotate(45deg); }
-    .nav-toggle.open span::after { top: 0; transform: rotate(-45deg); }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    main { padding-top: 64px; }
-    section { max-width: var(--maxw); margin: 0 auto; padding: 76px 24px; }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    /* ===== Hero ===== */
-    .hero { min-height: calc(100vh - 64px); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
-    .avatar {
-      width: 148px; height: 148px; border-radius: 50%; object-fit: cover;
-      border: 4px solid #fff; box-shadow: var(--shadow); outline: 3px solid var(--primary-soft);
-      margin-bottom: 26px;
-    }
-    .hero h1 { font-size: clamp(40px, 8vw, 60px); font-weight: 800; letter-spacing: 2px; margin-bottom: 10px; }
-    .hero h1 .accent { color: var(--primary); }
-    .hero .role { font-size: clamp(16px, 2.5vw, 19px); color: var(--primary-dark); font-weight: 600; margin-bottom: 16px; }
-    .hero .tagline { font-size: clamp(15px, 2.2vw, 17px); color: var(--text-muted); max-width: 520px; }
-    .hero .cta-row { margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
-    .btn {
-      padding: 12px 28px; border-radius: 999px; font-size: 15px; font-weight: 600;
-      text-decoration: none; transition: all .2s ease; cursor: pointer; border: none;
-    }
-    .btn-primary { background: var(--primary); color: #fff; box-shadow: 0 6px 20px rgba(91,141,239,0.35); }
-    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
-    .btn-ghost { background: var(--card); color: var(--primary); border: 1px solid var(--border); }
-    .btn-ghost:hover { background: var(--primary-soft); }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+            "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+        }
 
-    /* ===== 通用标题 ===== */
-    .section-title { font-size: 13px; font-weight: 700; color: var(--primary); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; }
-    .section-heading { font-size: clamp(26px, 4vw, 34px); font-weight: 800; margin-bottom: 30px; }
+        /* ===== 顶部导航 ===== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: saturate(180%) blur(12px);
+            -webkit-backdrop-filter: saturate(180%) blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
 
-    .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; box-shadow: var(--shadow); }
-    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .nav-inner {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-    /* 个人自述列表 */
-    .about-points { list-style: none; }
-    .about-points li { position: relative; padding-left: 26px; margin-bottom: 14px; color: var(--text-muted); }
-    .about-points li::before { content: ""; position: absolute; left: 0; top: 11px; width: 8px; height: 8px; border-radius: 50%; background: var(--primary); }
-    .about-points b { color: var(--text); }
+        .brand {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-    /* 基本信息 */
-    .info-list { list-style: none; }
-    .info-list li { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px dashed var(--border); font-size: 15px; }
-    .info-list li:last-child { border-bottom: none; }
-    .info-list .k { color: var(--text-muted); min-width: 70px; }
-    .info-list .v { color: var(--text); font-weight: 500; }
+        .brand .dot {
+            width: 30px;
+            height: 30px;
+            border-radius: 9px;
+            background: var(--primary);
+            color: #fff;
+            display: grid;
+            place-items: center;
+            font-size: 15px;
+            font-weight: 700;
+        }
 
-    /* 技能 chips */
-    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
-    .chip { padding: 7px 16px; background: var(--primary-soft); color: var(--primary-dark); border-radius: 999px; font-size: 14px; font-weight: 600; }
+        .brand span.name {
+            color: var(--text);
+        }
 
-    /* ===== 时间轴（工作经历）===== */
-    .timeline { position: relative; padding-left: 8px; }
-    .tl-item {
-      display: grid;
-      grid-template-columns: 130px 24px 1fr;
-      gap: 0 14px;
-      padding-bottom: 30px;
-    }
-    .tl-item:last-child { padding-bottom: 0; }
-    .tl-time { font-size: 13px; color: var(--text-muted); font-weight: 600; padding-top: 3px; white-space: nowrap; }
-    .tl-axis { display: flex; flex-direction: column; align-items: center; }
-    .tl-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--primary); border: 3px solid var(--primary-soft); margin-top: 5px; z-index: 1; }
-    .tl-line { flex: 1; width: 2px; background: var(--border); margin-top: 2px; }
-    .tl-item:last-child .tl-line { display: none; }
-    .tl-body {
-      background: var(--card); border: 1px solid var(--border); border-radius: 12px;
-      padding: 18px 20px; box-shadow: 0 4px 14px rgba(0,0,0,0.03);
-    }
-    .tl-body .co { font-size: 16px; font-weight: 700; color: var(--text); }
-    .tl-body .role-tag { display: inline-block; margin-left: 8px; font-size: 12px; color: var(--primary-dark); background: var(--primary-soft); padding: 2px 10px; border-radius: 999px; vertical-align: middle; }
-    .tl-body .desc { font-size: 14px; color: var(--text-muted); margin-top: 6px; }
+        .brand .dot svg {
+            width: 17px;
+            height: 17px;
+        }
 
-    /* ===== 我的作品 / 服务方向 ===== */
-    .works { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .work-card {
-      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 26px; box-shadow: var(--shadow); transition: all .25s ease;
-    }
-    .work-card:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(91,141,239,0.15); }
-    .work-icon {
-      width: 46px; height: 46px; border-radius: 12px; background: var(--primary-soft);
-      display: grid; place-items: center; margin-bottom: 16px; color: var(--primary);
-    }
-    .work-icon svg { width: 24px; height: 24px; }
-    .work-card h3 { font-size: 17px; margin-bottom: 8px; }
-    .work-card p { font-size: 14px; color: var(--text-muted); }
+        .nav-links {
+            display: flex;
+            gap: 6px;
+            list-style: none;
+        }
 
-    /* ===== 联系我 ===== */
-    .contact-list { list-style: none; display: grid; gap: 12px; margin-top: 6px; }
-    .contact-list li {
-      display: flex; align-items: center; gap: 14px;
-      background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 14px 18px;
-    }
-    .contact-list .ic {
-      width: 38px; height: 38px; border-radius: 10px; background: var(--primary-soft);
-      display: grid; place-items: center; color: var(--primary); flex-shrink: 0;
-    }
-    .contact-list .ic svg { width: 20px; height: 20px; }
-    .contact-list .ct { font-size: 13px; color: var(--text-muted); }
-    .contact-list .cv { font-size: 15px; color: var(--text); font-weight: 600; }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 15px;
+            padding: 8px 14px;
+            border-radius: 10px;
+            transition: all .2s ease;
+        }
 
-    .socials { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 24px; }
-    .social-btn {
-      width: 50px; height: 50px; border-radius: 50%; background: var(--card);
-      border: 1px solid var(--border); display: grid; place-items: center;
-      color: var(--text-muted); cursor: pointer; text-decoration: none;
-      transition: all .25s ease;
-    }
-    .social-btn svg { width: 22px; height: 22px; }
-    .social-btn:hover { background: var(--primary); color: #fff; border-color: var(--primary); transform: translateY(-3px); }
+        .nav-links a:hover {
+            color: var(--primary);
+            background: var(--primary-soft);
+        }
 
-    /* ===== 页脚 ===== */
-    footer { border-top: 1px solid var(--border); background: var(--card); padding: 28px 24px; text-align: center; color: var(--text-muted); font-size: 14px; }
-    footer a { color: var(--primary); text-decoration: none; }
+        .nav-links a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
 
-    #toTop {
-      position: fixed; right: 24px; bottom: 24px; width: 44px; height: 44px; border-radius: 50%;
-      border: none; background: var(--primary); color: #fff; cursor: pointer; display: grid; place-items: center;
-      opacity: 0; pointer-events: none; transition: all .3s ease; box-shadow: 0 6px 18px rgba(91,141,239,0.4); z-index: 90;
-    }
-    #toTop.show { opacity: 1; pointer-events: auto; }
-    #toTop:hover { background: var(--primary-dark); }
-    #toTop svg { width: 20px; height: 20px; }
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            place-items: center;
+        }
 
-    #toast {
-      position: fixed; left: 50%; bottom: 40px; transform: translateX(-50%) translateY(20px);
-      background: var(--text); color: #fff; padding: 10px 20px; border-radius: 10px; font-size: 14px;
-      opacity: 0; pointer-events: none; transition: all .3s ease; z-index: 200;
-    }
-    #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+        .nav-toggle:hover {
+            background: var(--primary-soft);
+        }
 
-    /* ===== 响应式 ===== */
-    @media (max-width: 680px) {
-      .nav-toggle { display: grid; }
-      .nav-links {
-        position: absolute; top: 64px; left: 0; right: 0; flex-direction: column;
-        background: var(--card); border-bottom: 1px solid var(--border);
-        padding: 12px 24px 20px; gap: 4px; display: none;
-      }
-      .nav-links.open { display: flex; }
-      .nav-links a { padding: 12px 14px; }
-      section { padding: 56px 20px; }
-      .card { padding: 24px 20px; }
-      .grid-2, .works { grid-template-columns: 1fr; }
-      .tl-item { grid-template-columns: 1fr; gap: 8px; padding-left: 0; }
-      .tl-time { padding-top: 0; }
-      .tl-axis { flex-direction: row; align-items: center; gap: 8px; }
-      .tl-line { display: none !important; }
-      .tl-body { width: 100%; }
-    }
-  </style>
+        .nav-toggle span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: var(--text);
+            position: relative;
+            transition: all .25s ease;
+        }
+
+        .nav-toggle span::before, .nav-toggle span::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 20px;
+            height: 2px;
+            background: var(--text);
+            transition: all .25s ease;
+        }
+
+        .nav-toggle span::before {
+            top: -6px;
+        }
+
+        .nav-toggle span::after {
+            top: 6px;
+        }
+
+        .nav-toggle.open span {
+            background: transparent;
+        }
+
+        .nav-toggle.open span::before {
+            top: 0;
+            transform: rotate(45deg);
+        }
+
+        .nav-toggle.open span::after {
+            top: 0;
+            transform: rotate(-45deg);
+        }
+
+        main {
+            padding-top: 64px;
+        }
+
+        section {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 48px 24px;
+            scroll-margin-top: 72px;
+        }
+
+        /* ===== Hero ===== */
+        .hero {
+            min-height: calc(100vh - 64px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .avatar {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            box-shadow: var(--shadow);
+            outline: 3px solid var(--primary-soft);
+            margin-bottom: 26px;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 8vw, 60px);
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 .accent {
+            color: var(--primary);
+        }
+
+        .hero .role {
+            font-size: clamp(16px, 2.5vw, 19px);
+            color: var(--primary-dark);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .hero .tagline {
+            font-size: clamp(15px, 2.2vw, 17px);
+            color: var(--text-muted);
+            max-width: 560px;
+        }
+
+        .hero .stats {
+            display: flex;
+            gap: 14px;
+            margin-top: 26px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .stat {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 12px 24px;
+            min-width: 132px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .stat b {
+            display: block;
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.3;
+        }
+
+        .stat span {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .hero .hero-info {
+            margin-top: 26px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px 0;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 10px 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .hero .hero-info .hi {
+            font-size: 14px;
+            color: var(--text-muted);
+            padding: 0 18px;
+        }
+
+        .hero .hero-info .hi:not(:last-child) {
+            border-right: 1px solid var(--border);
+        }
+
+        .hero .hero-info .hi b {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .hero .cta-row {
+            margin-top: 32px;
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 13px 26px;
+            border-radius: 999px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all .25s ease;
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn svg {
+            width: 16px;
+            height: 16px;
+            transition: transform .25s ease;
+        }
+
+        .btn:hover svg {
+            transform: translateX(2px);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #fff;
+            box-shadow: 0 6px 20px rgba(91, 141, 239, 0.35);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 26px rgba(91, 141, 239, 0.45);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .btn-ghost {
+            background: var(--card);
+            color: var(--primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-ghost:hover {
+            background: var(--primary-soft);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(91, 141, 239, 0.16);
+        }
+
+        .btn-ghost:active {
+            transform: translateY(0);
+        }
+
+        /* ===== 通用标题 ===== */
+        .section-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .section-heading {
+            font-size: clamp(26px, 4vw, 34px);
+            font-weight: 800;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px;
+            box-shadow: var(--shadow);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* 个人自述列表 */
+        .about-points {
+            list-style: none;
+        }
+
+        .about-points li {
+            position: relative;
+            padding-left: 26px;
+            margin-bottom: 14px;
+            color: var(--text-muted);
+        }
+
+        .about-points li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 11px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--primary);
+        }
+
+        .about-points b {
+            color: var(--text);
+        }
+
+        /* 基本信息 */
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            display: flex;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px dashed var(--border);
+            font-size: 15px;
+        }
+
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+
+        .info-list .k {
+            color: var(--text-muted);
+            min-width: 70px;
+        }
+
+        .info-list .v {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        /* 技能 chips */
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 6px;
+        }
+
+        .chip {
+            padding: 7px 16px;
+            background: var(--primary-soft);
+            color: var(--primary-dark);
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* ===== 时间轴（工作经历）===== */
+        .timeline {
+            position: relative;
+            padding-left: 8px;
+        }
+
+        .tl-item {
+            display: grid;
+            grid-template-columns: 130px 24px 1fr;
+            gap: 0 14px;
+            padding-bottom: 30px;
+        }
+
+        .tl-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .tl-time {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 600;
+            padding-top: 3px;
+            white-space: nowrap;
+        }
+
+        .tl-axis {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .tl-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid var(--primary-soft);
+            margin-top: 5px;
+            z-index: 1;
+        }
+
+        .tl-line {
+            flex: 1;
+            width: 2px;
+            background: var(--border);
+            margin-top: 2px;
+        }
+
+        .tl-item:last-child .tl-line {
+            display: none;
+        }
+
+        .tl-body {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 18px 20px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+        }
+
+        .tl-body .co {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .tl-body .role-tag {
+            display: inline-block;
+            margin-left: 8px;
+            font-size: 12px;
+            color: var(--primary-dark);
+            background: var(--primary-soft);
+            padding: 2px 10px;
+            border-radius: 999px;
+            vertical-align: middle;
+        }
+
+        .tl-body .desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-top: 6px;
+        }
+
+        /* ===== 个人作品 ===== */
+        .work-nav {
+            position: sticky;
+            top: 64px;
+            z-index: 80;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 34px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.88);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            box-shadow: 0 8px 24px rgba(91, 141, 239, 0.10);
+            backdrop-filter: saturate(180%) blur(10px);
+            -webkit-backdrop-filter: saturate(180%) blur(10px);
+        }
+
+        .work-nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 14px;
+            font-weight: 600;
+            padding: 8px 16px 8px 10px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+            transition: all .25s ease;
+        }
+
+        .work-nav a svg {
+            width: 15px;
+            height: 15px;
+            color: var(--primary);
+            transition: transform .25s ease;
+        }
+
+        .work-nav a:hover {
+            border-color: var(--primary);
+            background: var(--primary-soft);
+            color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(91, 141, 239, 0.18);
+        }
+
+        .work-nav a:hover svg {
+            transform: scale(1.1);
+        }
+
+        .work-nav a.active {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+            box-shadow: 0 6px 16px rgba(91, 141, 239, 0.35);
+        }
+
+        .work-nav a.active svg {
+            color: #fff;
+        }
+
+        .work-block {
+            margin-bottom: 40px;
+            scroll-margin-top: 150px;
+        }
+
+        .work-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .work-block-head {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .work-block-head h3 {
+            font-size: 19px;
+            margin-bottom: 4px;
+        }
+
+        .work-block-head p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .work-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            background: var(--primary-soft);
+            display: grid;
+            place-items: center;
+            margin-bottom: 0;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .work-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .work-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .work-gallery:empty {
+            display: none;
+        }
+
+        .work-gallery img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+            transition: transform .25s ease;
+        }
+
+        .work-gallery img:hover {
+            transform: scale(1.02);
+        }
+
+        /* ===== 联系信息 ===== */
+        .contact-list {
+            list-style: none;
+            display: grid;
+            gap: 12px;
+            margin-top: 6px;
+        }
+
+        .contact-list li {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 14px 18px;
+        }
+
+        .contact-list .ic {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: var(--primary-soft);
+            display: grid;
+            place-items: center;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .contact-list .ic svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .contact-list .ct {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .contact-list .cv {
+            font-size: 15px;
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .socials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 24px;
+        }
+
+        .social-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--card);
+            border: 1px solid var(--border);
+            display: grid;
+            place-items: center;
+            color: var(--text-muted);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all .25s ease;
+        }
+
+        .social-btn svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .social-btn:hover {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* ===== 微信二维码装饰 ===== */
+        .wechat-box {
+            margin-top: 24px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .wechat-card {
+            position: relative;
+            display: inline-block;
+            background: var(--card);
+            border-radius: 18px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(91, 141, 239, 0.14);
+        }
+
+        .qr-corner {
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            border-color: var(--primary);
+            border-style: solid;
+            z-index: 2;
+        }
+
+        .qr-corner.tl {
+            top: 6px;
+            left: 6px;
+            border-width: 3px 0 0 3px;
+            border-top-left-radius: 8px;
+        }
+
+        .qr-corner.tr {
+            top: 6px;
+            right: 6px;
+            border-width: 3px 3px 0 0;
+            border-top-right-radius: 8px;
+        }
+
+        .qr-corner.bl {
+            bottom: 6px;
+            left: 6px;
+            border-width: 0 0 3px 3px;
+            border-bottom-left-radius: 8px;
+        }
+
+        .qr-corner.br {
+            bottom: 6px;
+            right: 6px;
+            border-width: 0 3px 3px 0;
+            border-bottom-right-radius: 8px;
+        }
+
+        .wechat-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 8px;
+            display: block;
+            background: #fff;
+            padding: 4px;
+            border: 1px solid var(--border);
+            position: relative;
+            z-index: 1;
+        }
+
+        .wechat-tip {
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .wechat-tip svg {
+            width: 14px;
+            height: 14px;
+            color: var(--primary);
+        }
+
+        /* ===== 悬浮导航 ===== */
+        .float-nav {
+            position: fixed;
+            right: 22px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 90;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 10px 8px;
+            box-shadow: 0 10px 30px rgba(91, 141, 239, 0.16);
+            backdrop-filter: saturate(180%) blur(10px);
+            -webkit-backdrop-filter: saturate(180%) blur(10px);
+        }
+
+        .fn-item {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all .2s ease;
+        }
+
+        .fn-item svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .fn-item:hover {
+            background: var(--primary-soft);
+            color: var(--primary);
+        }
+
+        .fn-item.active {
+            background: var(--primary);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(91, 141, 239, 0.4);
+        }
+        .img-scroll{
+            display:flex;
+            gap:10px;
+            overflow-x:auto;
+            overscroll-behavior-inline: contain;
+            padding:10px 0;
+            /* 隐藏滚动条，可选 */
+            scrollbar-width: none;
+        }
+        .img-scroll::-webkit-scrollbar{
+            display:none;
+        }
+        .img-scroll img{
+            height:300px;
+            flex:0 0 auto;
+            border-radius:8px;
+        }
+
+        /* ===== 页脚 ===== */
+        footer {
+            border-top: 1px solid var(--border);
+            background: var(--card);
+            padding: 28px 24px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        #toTop {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: none;
+            background: var(--primary);
+            color: #fff;
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: all .3s ease;
+            box-shadow: 0 6px 18px rgba(91, 141, 239, 0.4);
+            z-index: 90;
+        }
+
+        #toTop.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        #toTop:hover {
+            background: var(--primary-dark);
+        }
+
+        #toTop svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        #toast {
+            position: fixed;
+            left: 50%;
+            bottom: 40px;
+            transform: translateX(-50%) translateY(20px);
+            background: var(--text);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 14px;
+            opacity: 0;
+            pointer-events: none;
+            transition: all .3s ease;
+            z-index: 200;
+        }
+
+        #toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* ===== 响应式 ===== */
+        @media (max-width: 900px) {
+            .work-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 680px) {
+            .nav-toggle {
+                display: grid;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 64px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background: var(--card);
+                border-bottom: 1px solid var(--border);
+                padding: 12px 24px 20px;
+                gap: 4px;
+                display: none;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 12px 14px;
+            }
+
+            section {
+                padding: 56px 20px;
+            }
+
+            .card {
+                padding: 24px 20px;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .work-nav {
+                border-radius: 16px;
+                justify-content: center;
+                gap: 6px;
+            }
+
+            .work-gallery {
+                gap: 10px;
+            }
+
+            .tl-item {
+                grid-template-columns: 1fr;
+                gap: 8px;
+                padding-left: 0;
+            }
+
+            .tl-time {
+                padding-top: 0;
+            }
+
+            .tl-axis {
+                flex-direction: row;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .tl-line {
+                display: none !important;
+            }
+
+            .tl-body {
+                width: 100%;
+            }
+
+            .hero .stats {
+                gap: 10px;
+            }
+
+            .stat {
+                min-width: 104px;
+                padding: 10px 14px;
+            }
+
+            .hero .hero-info {
+                border-radius: 16px;
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
+                max-width: 420px;
+                padding: 6px 20px;
+            }
+
+            .hero .hero-info .hi {
+                padding: 6px 0;
+                text-align: left;
+            }
+
+            .hero .hero-info .hi:not(:last-child) {
+                border-right: none;
+                border-bottom: 1px dashed var(--border);
+            }
+
+            .float-nav {
+                top: auto;
+                right: auto;
+                left: 50%;
+                bottom: 16px;
+                transform: translateX(-50%);
+                flex-direction: row;
+                gap: 4px;
+                padding: 6px 8px;
+            }
+
+            .fn-item {
+                width: 34px;
+                height: 34px;
+            }
+
+            .fn-item svg {
+                width: 16px;
+                height: 16px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-
-  <nav class="nav">
+<nav class="nav">
     <div class="nav-inner">
-      <a class="brand" href="#home">
-        <span class="dot">Z</span>
-        <span class="name">张昌 · 设计</span>
-      </a>
-      <button class="nav-toggle" id="navToggle" aria-label="菜单"><span></span></button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home" class="active">首页</a></li>
-        <li><a href="#about">关于我</a></li>
-        <li><a href="#works">我的作品</a></li>
-        <li><a href="#contact">联系我</a></li>
-      </ul>
+        <a class="brand" href="#home">
+            <span class="dot">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                     stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="13" rx="2" ry="2"/>
+                    <line x1="8" y1="21" x2="16" y2="21"/>
+                    <line x1="12" y1="17" x2="12" y2="21"/>
+                </svg>
+            </span>
+            <span class="name">张昌 · 平面设计</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="菜单"><span></span></button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="active">首页</a></li>
+            <li><a href="#intro">个人自述</a></li>
+            <li><a href="#experience">工作经历</a></li>
+            <li><a href="#contact">联系信息</a></li>
+            <li><a href="#works">个人作品</a></li>
+        </ul>
     </div>
-  </nav>
+</nav>
 
-  <main>
+<main>
     <!-- ===== 首页 ===== -->
     <section id="home" class="hero">
-     <img class="avatar" src="assets/avatar.png" alt="张昌的头像" style="display:block; margin:0 auto;" />
-      <h1>您好，我是 <span class="accent">张昌</span></h1>
-      <p class="role">平面设计师 · 10年经验</p>
-      <p class="tagline">10年平面设计 × 9 年教育行业经验，<br>专注视觉设计、活动流程统筹与课程内容制作，把想法变成清晰好看的成品。</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="#works">看看我的能力</a>
-        <a class="btn btn-ghost" href="#contact">联系我</a>
-      </div>
+        <img class="avatar" src="assets/avatar.png" alt="张昌的头像" style="display:block; margin:0 auto;"/>
+        <h1>您好，我是<span class="accent">张昌</span></h1>
+        <p class="role">求职意向：平面设计师 / 行政助理</p>
+        <p class="tagline">擅长视觉创意设计、教学项目统筹及行政事务协调，高效衔接创意输出与项目执行。</p>
+        <div class="stats">
+            <div class="stat"><b>10年</b><span>平面设计经验</span></div>
+            <div class="stat"><b>9年</b><span>教育行业经验</span></div>
+            <div class="stat"><b>3年</b><span>行政助理经验</span></div>
+        </div>
+        <div class="hero-info">
+            <span class="hi"><b>坐标</b>：北京市海淀区</span>
+            <span class="hi"><b>学历</b>：本科 · 环境与艺术设计</span>
+            <span class="hi"><b>出生</b>：1993 年 1 月</span>
+            <span class="hi"><b>籍贯</b>：山东省</span>
+        </div>
+        <div class="cta-row">
+            <a class="btn btn-primary" href="#experience">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                     stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path
+                        d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                工作经历
+            </a>
+            <a class="btn btn-ghost" href="#contact">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                     stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline
+                        points="22,6 12,13 2,6"/></svg>
+                联系方式
+            </a>
+            <a class="btn btn-ghost" href="#works">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                     stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7"
+                                                                                                  height="7" rx="1"/><rect
+                        x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+                个人作品
+            </a>
+        </div>
     </section>
 
-    <!-- ===== 关于我 ===== -->
-    <section id="about">
-      <p class="section-title">ABOUT ME</p>
-      <h2 class="section-heading">关于我</h2>
-      <div class="grid-2">
+    <!-- ===== 第一部分：个人自述 ===== -->
+    <section id="intro">
+        <p class="section-title">PROFILE</p>
+        <h2 class="section-heading">个人自述</h2>
         <div class="card">
-          <h3 style="margin-bottom:14px;font-size:17px;">个人自述</h3>
-          <ul class="about-points">
-            <li><b>10年平面设计经验</b>，同时具备9年教育行业多领域工作经验。</li>
-            <li><b>活动流程统筹：</b>主导专项活动全套视觉产品设计、印刷对接、场地布置。</li>
-            <li><b>课程活动组织：</b>组织 330 课程、初中科技开放课送课到校，担任负责人。</li>
-            <li><b>协调与执行：</b>协助策划校外活动，负责方案执行、资源调度与日常事务处理。</li>
-          </ul>
-          <h3 style="margin:22px 0 10px;font-size:17px;">常用软件</h3>
-          <div class="chips">
-            <span class="chip">Photoshop</span>
-            <span class="chip">Illustrator</span>
-            <span class="chip">InDesign</span>
-            <span class="chip">Premiere</span>
-            <span class="chip">剪映</span>
-            <span class="chip">WPS</span>
-          </div>
-        </div>
-        <div class="card">
-          <h3 style="margin-bottom:10px;font-size:17px;">基本信息</h3>
-          <ul class="info-list">
-            <li><span class="k">坐标</span><span class="v">北京市海淀区</span></li>
-            <li><span class="k">学历</span><span class="v">本科 · 环境与艺术设计</span></li>
-            <li><span class="k">出生</span><span class="v">1993 年 1 月</span></li>
-            <li><span class="k">籍贯</span><span class="v">山东省</span></li>
-          </ul>
-          <h3 style="margin:22px 0 6px;font-size:17px;">工作经历</h3>
-          <div class="timeline" style="padding-top:6px;">
-            <div class="tl-item">
-              <div class="tl-time">2019.05 – 2026.08</div>
-              <div class="tl-axis"><div class="tl-dot"></div><div class="tl-line"></div></div>
-              <div class="tl-body">
-                <div class="co">北京选修课教育文化发展有限公司<span class="role-tag">设计主管 / 行政主管</span></div>
-                <div class="desc">校园素质教育、校园文化建设、研学活动；负责平面排版、课件、视频剪辑、公众号维护与活动组织。</div>
-              </div>
+            <h3 style="margin-bottom:14px;font-size:17px;">个人自述</h3>
+                <ul class="about-points">
+                    <li><b>10年平面设计经验</b>，同时具备9年教育行业多领域工作经验。</li>
+                    <li><b>活动流程统筹：</b>主导专项活动全套视觉产品设计、印刷对接、场地布置。</li>
+                    <li><b>课程活动组织：</b>组织 330 课程、初中科技开放课送课到校，担任负责人。</li>
+                    <li><b>协调与执行：</b>协助策划校外活动，负责方案执行、资源调度与日常事务处理。</li>
+                </ul>
+                <h3 style="margin:22px 0 10px;font-size:17px;">常用软件</h3>
+                <div class="chips">
+                    <span class="chip">Photoshop</span>
+                    <span class="chip">Illustrator</span>
+                    <span class="chip">InDesign</span>
+                    <span class="chip">Premiere</span>
+                    <span class="chip">剪映</span>
+                    <span class="chip">WPS</span>
+                </div>
             </div>
-            <div class="tl-item">
-              <div class="tl-time">2017.04 – 2019.04</div>
-              <div class="tl-axis"><div class="tl-dot"></div><div class="tl-line"></div></div>
-              <div class="tl-body">
-                <div class="co">北京时代焦点国际教育<span class="role-tag">平面设计</span></div>
-                <div class="desc">留学申请指导、雅思托福培训；市场物料、书籍画册设计与拍摄剪辑。</div>
-              </div>
-            </div>
-            <div class="tl-item">
-              <div class="tl-time">2016.04 – 2017.01</div>
-              <div class="tl-axis"><div class="tl-dot"></div><div class="tl-line"></div></div>
-              <div class="tl-body">
-                <div class="co">北京理工文化培训学校<span class="role-tag">设计 / 前端 / 剪辑</span></div>
-                <div class="desc">成人职业资格培训，负责平面设计、网络前端与课程视频剪辑。</div>
-              </div>
-            </div>
-            <div class="tl-item">
-              <div class="tl-time">2015.09 – 2016.03</div>
-              <div class="tl-axis"><div class="tl-dot"></div><div class="tl-line"></div></div>
-              <div class="tl-body">
-                <div class="co">北京米瑞福文化发展<span class="role-tag">设计 / 前端</span></div>
-                <div class="desc">零售电商产品推广，负责平面设计与网络前端。</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- ===== 我的作品 ===== -->
-    <section id="works">
-      <p class="section-title">WHAT I DO</p>
-      <h2 class="section-heading">我的作品 / 擅长方向</h2>
-      <div class="works">
-        <div class="work-card">
-          <div class="work-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          </div>
-          <h3>平面与排版设计</h3>
-          <p>书籍、画册、海报、易拉宝、展板、背景墙、文化墙、节日卡片等全套视觉设计与印刷工艺对接。</p>
+    <!-- ===== 第二部分：工作经历 ===== -->
+    <section id="experience">
+        <p class="section-title">EXPERIENCE</p>
+        <h2 class="section-heading">工作经历</h2>
+        <div class="timeline" style="padding-top:6px;">
+            <div class="tl-item">
+                <div class="tl-time">2019.05 – 2026.08</div>
+                <div class="tl-axis">
+                    <div class="tl-dot"></div>
+                    <div class="tl-line"></div>
+                </div>
+                <div class="tl-body">
+                    <div class="co">北京选修课教育文化发展有限公司<span
+                            class="role-tag">设计主管 / 行政主管</span></div>
+                    <div class="desc"><b>业务方向：</b>校园素质教育、校园文化建设、研学活动；<br><b>工作内容：</b>视觉物料设计排版、课件制作、视频剪辑、公众号维护、线下活动组织、总经办行政支持等工作。
+                    </div>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-time">2017.04 – 2019.04</div>
+                <div class="tl-axis">
+                    <div class="tl-dot"></div>
+                    <div class="tl-line"></div>
+                </div>
+                <div class="tl-body">
+                    <div class="co">北京时代焦点国际教育咨询服务有限公司<span class="role-tag">平面设计</span>
+                    </div>
+                    <div class="desc"><b>业务方向：</b>留学申请指导、雅思托福培训；<br><b>工作内容：</b>市场物料、书籍画册设计与拍摄剪辑。
+                    </div>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-time">2016.04 – 2017.01</div>
+                <div class="tl-axis">
+                    <div class="tl-dot"></div>
+                    <div class="tl-line"></div>
+                </div>
+                <div class="tl-body">
+                    <div class="co">北京理工文化培训学校<span class="role-tag">设计 / 前端 / 剪辑</span></div>
+                    <div class="desc"><b>业务方向：</b>成人职业资格培训，<br> <b>工作内容：</b>负责平面设计、网络前端与课程视频剪辑。
+                    </div>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-time">2015.09 – 2016.03</div>
+                <div class="tl-axis">
+                    <div class="tl-dot"></div>
+                    <div class="tl-line"></div>
+                </div>
+                <div class="tl-body">
+                    <div class="co">北京米瑞福文化发展<span class="role-tag">设计 / 前端</span></div>
+                    <div class="desc"><b>业务方向：</b>零售电商产品推广，<br> <b>工作内容：</b>负责平面设计与网络前端。
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="work-card">
-          <div class="work-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-          </div>
-          <h3>课件与视频制作</h3>
-          <p>课程 / 讲座课件排版美化，视频脚本策划、录制、剪辑，活动跟拍与后期包装。</p>
-        </div>
-        <div class="work-card">
-          <div class="work-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <h3>活动策划与统筹</h3>
-          <p>科技节、嘉年华、艺术节等校园活动策划组织实施；连续 4 学期担任 330 课程校区负责人。</p>
-        </div>
-        <div class="work-card">
-          <div class="work-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </div>
-          <h3>新媒体与行政支持</h3>
-          <p>公众号定期运营与配图设计；协助总经办出差、调研、车辆调度、行政采购等日常事务。</p>
-        </div>
-      </div>
     </section>
 
-    <!-- ===== 联系我 ===== -->
+    <!-- ===== 第三部分：联系信息 ===== -->
     <section id="contact">
-      <p class="section-title">CONTACT</p>
-      <h2 class="section-heading">联系我</h2>
-      <div class="card">
-        <p style="color:var(--text-muted);margin-bottom:18px;">有设计合作、活动统筹或课程内容需求，欢迎随时找我聊聊。</p>
-        <ul class="contact-list">
-          <li>
-            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
-            <div><div class="ct">邮箱</div><div class="cv">18612170121@163.com</div></div>
-          </li>
-          <li>
-            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
-            <div><div class="ct">电话 / 微信</div><div class="cv">186 1217 0121（同微信）</div></div>
-          </li>
-          <li>
-            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-            <div><div class="ct">坐标</div><div class="cv">北京市海淀区</div></div>
-          </li>
-        </ul>
-        <div class="socials">
-          <a class="social-btn" href="#" data-name="邮箱" title="邮箱" aria-label="邮箱"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
-          <a class="social-btn" href="#" data-name="微信" title="微信" aria-label="微信"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
-          <a class="social-btn" href="#" data-name="GitHub" title="GitHub" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
-          <a class="social-btn" href="#" data-name="个人主页" title="个人主页" aria-label="个人主页"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+        <p class="section-title">CONTACT</p>
+        <h2 class="section-heading">联系信息</h2>
+        <div class="card">
+            <p style="color:var(--text-muted);margin-bottom:15px;margin-left: 20px;">
+                期待与您取得进一步的沟通 🤝</p>
+            <ul class="contact-list">
+                <li>
+                    <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                          stroke-linecap="round" stroke-linejoin="round"><path
+                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline
+                            points="22,6 12,13 2,6"/></svg></span>
+                    <div>
+                        <div class="ct">邮箱</div>
+                        <div class="cv">18612170121@163.com</div>
+                    </div>
+                </li>
+                <li>
+                    <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                          stroke-linecap="round" stroke-linejoin="round"><path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+                    <div>
+                        <div class="ct">电话 / 微信</div>
+                        <div class="cv"><a href="tel:18612170121" style="color:inherit;text-decoration:none;">186 1217 0121 </a></div>
+                    </div>
+                </li>
+                <li>
+                    <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                          stroke-linecap="round" stroke-linejoin="round"><path
+                            d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10"
+                                                                                        r="3"/></svg></span>
+                    <div>
+                        <div class="ct">坐标</div>
+                        <div class="cv">北京市海淀区永丰海淀大悦城</div>
+                    </div>
+                </li>
+            </ul>
+            <div class="wechat-box">
+                <div class="wechat-card">
+                    <span class="qr-corner tl"></span>
+                    <span class="qr-corner tr"></span>
+                    <span class="qr-corner bl"></span>
+                    <span class="qr-corner br"></span>
+                    <img src="assets/wechat.jpg"  style="margin:10px auto;" alt="张昌的微信二维码"/>
+                    <p class="wechat-tip">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                             stroke-linecap="round" stroke-linejoin="round"><path
+                                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                        扫描二维码添加微信好友
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
-  </main>
 
-  <footer>
-    © 2026 <a href="#home">XBAOS</a> · 张昌 · 平面设计师 · 北京海淀
-  </footer>
+    <!-- ===== 第四部分：个人作品 ===== -->
+    <section id="works">
+        <p class="section-title">PORTFOLIO</p>
+        <h2 class="section-heading">个人作品 / 擅长方向</h2>
+        <!-- 作品子分类直达导航 -->
+        <nav class="work-nav" aria-label="作品子分类导航">
+            <a href="#work-graphic">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                     stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5"
+                                                                                                        cy="8.5" r="1.5"/><path
+                        d="M21 15l-5-5L5 21"/></svg>
+                平面设计
+            </a>
+            <a href="#work-book">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                     stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path
+                        d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                书籍排版
+            </a>
+            <a href="#work-course">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                     stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8"
+                                                                                                          y1="21" x2="16"
+                                                                                                          y2="21"/><line
+                        x1="12" y1="17" x2="12" y2="21"/></svg>
+                课件设计
+            </a>
+            <a href="#work-oa">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                     stroke-linejoin="round"><path
+                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                公众号设计
+            </a>
+            <a href="#work-video">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                     stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7"
+                                                                                                                 y1="2"
+                                                                                                                 x2="7"
+                                                                                                                 y2="22"/><line
+                        x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7"
+                                                                                                    y2="7"/><line x1="2"
+                                                                                                                  y1="17"
+                                                                                                                  x2="7"
+                                                                                                                  y2="17"/><line
+                        x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
+                视频剪辑
+            </a>
+        </nav>
 
-  <button id="toTop" aria-label="回到顶部">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-  </button>
-  <div id="toast"></div>
+        <!-- 平面设计 -->
+        <div id="work-graphic" class="work-block">
+            <div class="work-block-head">
+                <span class="work-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <circle cx="8.5" cy="8.5" r="1.5"/>
+                        <path d="M21 15l-5-5L5 21"/>
+                    </svg>
+                </span>
+                <div>
+                    <h3>平面设计</h3>
+                    <p>海报、易拉宝、展板、背景墙、文化墙、节日卡片等全套视觉设计，印刷工艺对接与落地。</p>
+                    <div>
+                        <div class="img-scroll">
+                            <img src="assets/ylb1.png"><img src="assets/ylb2.png"> <img src="assets/ylb3.png">
+                            <img src="assets/ylb4.png"><img src="assets/ylb4.png"><img src="assets/ylb4.png">
+                            <img src="assets/ylb4.png"><img src="assets/ylb4.png"><img src="assets/ylb4.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="work-gallery"><!-- 在此添加平面设计作品图片，如：<img src="assets/xxx.jpg" alt="作品名"> --></div>
+        </div>
 
-  <script>
+        <!-- 书籍排版 -->
+        <div id="work-book" class="work-block">
+            <div class="work-block-head">
+                <span class="work-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                    </svg>
+                </span>
+                <div>
+                    <h3>书籍排版</h3>
+                    <p>书籍、画册设计排版：封面装帧、内文版式与图文编排，输出可印刷文件。</p>
+                </div>
+            </div>
+            <div class="work-gallery"><!-- 在此添加书籍排版作品图片，如：<img src="assets/xxx.jpg" alt="作品名"> --></div>
+        </div>
+
+        <!-- 课件设计 -->
+        <div id="work-course" class="work-block">
+            <div class="work-block-head">
+                <span class="work-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                        <line x1="8" y1="21" x2="16" y2="21"/>
+                        <line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                </span>
+                <div>
+                    <h3>课件设计</h3>
+                    <p>课程 / 讲座课件排版美化，教学演示的信息可视化与视觉统一。</p>
+                </div>
+            </div>
+            <div class="work-gallery"><!-- 在此添加课件设计作品图片，如：<img src="assets/xxx.jpg" alt="作品名"> --></div>
+        </div>
+
+        <!-- 公众号设计 -->
+        <div id="work-oa" class="work-block">
+            <div class="work-block-head">
+                <span class="work-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                    </svg>
+                </span>
+                <div>
+                    <h3>公众号设计</h3>
+                    <p>公众号定期运营与配图设计：封面图、头图、长图文排版与品牌视觉规范。</p>
+                </div>
+            </div>
+            <div class="work-gallery"><!-- 在此添加公众号设计作品图片，如：<img src="assets/xxx.jpg" alt="作品名"> --></div>
+        </div>
+
+        <!-- 视频剪辑 -->
+        <div id="work-video" class="work-block">
+            <div class="work-block-head">
+                <span class="work-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/>
+                        <line x1="7" y1="2" x2="7" y2="22"/>
+                        <line x1="17" y1="2" x2="17" y2="22"/>
+                        <line x1="2" y1="12" x2="22" y2="12"/>
+                        <line x1="2" y1="7" x2="7" y2="7"/>
+                        <line x1="2" y1="17" x2="7" y2="17"/>
+                        <line x1="17" y1="17" x2="22" y2="17"/>
+                        <line x1="17" y1="7" x2="22" y2="7"/>
+                    </svg>
+                </span>
+                <div>
+                    <h3>视频剪辑</h3>
+                    <p>视频脚本策划、录制、剪辑与后期包装，活动跟拍与成片输出。</p>
+                </div>
+            </div>
+            <div class="work-gallery"><!-- 在此添加视频剪辑作品图片，如：<img src="assets/xxx.jpg" alt="作品名"> --></div>
+        </div>
+    </section>
+</main>
+
+<!-- ===== 悬浮导航：任意位置点击直达各部分 ===== -->
+<nav class="float-nav" id="floatNav" aria-label="悬浮导航">
+    <a href="#home" class="fn-item" data-label="首页">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline
+                points="9 22 9 12 15 12 15 22"/></svg>
+    </a>
+    <a href="#intro" class="fn-item" data-label="个人自述">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7"
+                                                                                          r="4"/></svg>
+    </a>
+    <a href="#experience" class="fn-item" data-label="工作经历">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path
+                d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+    </a>
+    <a href="#contact" class="fn-item" data-label="联系信息">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline
+                points="22,6 12,13 2,6"/></svg>
+    </a>
+    <a href="#works" class="fn-item" data-label="个人作品">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7"
+                                                                                          height="7" rx="1"/><rect
+                x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+    </a>
+</nav>
+
+<footer>
+    2026 · 张昌 · 平面设计师 · 北京海淀
+</footer>
+
+<button id="toTop" aria-label="回到顶部">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+         stroke-linejoin="round">
+        <polyline points="18 15 12 9 6 15"/>
+    </svg>
+</button>
+<div id="toast"></div>
+
+<script>
     // 汉堡菜单
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
     navToggle.addEventListener('click', () => {
-      navToggle.classList.toggle('open');
-      navLinks.classList.toggle('open');
+        navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open');
     });
     navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      navToggle.classList.remove('open'); navLinks.classList.remove('open');
+        navToggle.classList.remove('open');
+        navLinks.classList.remove('open');
     }));
 
     // 滚动高亮 + 回到顶部
     const sections = document.querySelectorAll('section');
     const links = navLinks.querySelectorAll('a');
+    const fnItems = document.querySelectorAll('.fn-item');
+    const workLinks = document.querySelectorAll('.work-nav a');
+    const workBlocks = document.querySelectorAll('.work-block');
     const onScroll = () => {
-      let id = 'home';
-      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) id = s.id; });
-      links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
-      document.getElementById('toTop').classList.toggle('show', window.scrollY > 400);
+        let id = 'home';
+        sections.forEach(s => {
+            if (window.scrollY >= s.offsetTop - 120) id = s.id;
+        });
+        links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+        fnItems.forEach(a => a.classList.toggle('active', id !== 'home' && a.getAttribute('href') === '#' + id));
+        let wid = '';
+        workBlocks.forEach(b => { if (window.scrollY >= b.offsetTop - 180) wid = b.id; });
+        workLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + wid));
+        document.getElementById('toTop').classList.toggle('show', window.scrollY > 400);
     };
     window.addEventListener('scroll', onScroll);
     onScroll();
-    document.getElementById('toTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    document.getElementById('toTop').addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
 
     // 社交占位提示
     const toast = document.getElementById('toast');
     let timer;
     document.querySelectorAll('.social-btn').forEach(btn => {
-      btn.addEventListener('click', e => {
-        e.preventDefault();
-        toast.textContent = btn.dataset.name + ' 链接即将上线，敬请期待～';
-        toast.classList.add('show');
-        clearTimeout(timer);
-        timer = setTimeout(() => toast.classList.remove('show'), 1800);
-      });
+        btn.addEventListener('click', e => {
+            e.preventDefault();
+            toast.textContent = btn.dataset.name + ' 链接即将上线，敬请期待～';
+            toast.classList.add('show');
+            clearTimeout(timer);
+            timer = setTimeout(() => toast.classList.remove('show'), 1800);
+        });
     });
-  </script>
+</script>
 </body>
 </html>
