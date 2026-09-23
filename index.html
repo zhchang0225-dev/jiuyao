@@ -879,23 +879,53 @@
             color: #fff;
             box-shadow: 0 4px 12px rgba(91, 141, 239, 0.4);
         }
+                /* 横向滑动相册容器 */
+        .img-scroll-wrap {
+            margin-top:12px;
+        }
         .img-scroll{
             display:flex;
-            gap:10px;
+            gap:12px;
             overflow-x:auto;
             overscroll-behavior-inline: contain;
-            padding:10px 0;
-            /* 隐藏滚动条，可选 */
+            padding:12px 4px;
+            border-radius:12px;
+            background:var(--card);
+            box-shadow:0 2px 10px rgba(0,0,0,0.04);
+            /* 宽度100%自适应父级，不再写死600px */
+            width:100%;
             scrollbar-width: none;
         }
         .img-scroll::-webkit-scrollbar{
             display:none;
         }
         .img-scroll img{
-            height:300px;
+            height:220px;
             flex:0 0 auto;
-            border-radius:8px;
+            border-radius:10px;
+            object-fit:cover;
+            border:1px solid var(--border);
+            transition:transform .2s ease;
         }
+        .img-scroll img:hover{
+            transform:scale(1.02);
+        }
+        /* 滑动提示文字 */
+        .scroll-hint{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:6px;
+            margin-top:8px;
+            font-size:13px;
+            color:var(--text-muted);
+        }
+        .scroll-hint svg{
+            width:16px;
+            height:16px;
+            opacity:0.7;
+        }
+
 
         /* ===== 页脚 ===== */
         footer {
@@ -1365,13 +1395,24 @@
                 <div>
                     <h3>平面设计</h3>
                     <p>海报、易拉宝、展板、背景墙、文化墙、节日卡片等全套视觉设计，印刷工艺对接与落地。</p>
-                    <div>
+                    <div class="img-scroll-wrap">
                         <div class="img-scroll">
                             <img src="assets/ylb1.png"><img src="assets/ylb2.png"> <img src="assets/ylb3.png">
                             <img src="assets/ylb4.png"><img src="assets/ylb4.png"><img src="assets/ylb4.png">
                             <img src="assets/ylb4.png"><img src="assets/ylb4.png"><img src="assets/ylb4.png">
                         </div>
                     </div>
+                    <div class="scroll-hint">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M15 18l-6-6 6-6"/>
+        </svg>
+        <span>左右滑动查看</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M9 18l6-6-6-6"/>
+        </svg>
+    </div>
+</div>
+
                 </div>
             </div>
             <div class="work-gallery"><!-- 在此添加平面设计作品图片，如：<img src="assets/xxx.jpg" alt="作品名"> --></div>
@@ -1500,6 +1541,20 @@
 <div id="toast"></div>
 
 <script>
+    // 相册：图片不足可滚动时自动隐藏“左右滑动查看”提示
+const scrollWraps = document.querySelectorAll('.img-scroll-wrap');
+scrollWraps.forEach(wrap=>{
+  const scrollEl = wrap.querySelector('.img-scroll');
+  const hint = wrap.querySelector('.scroll-hint');
+  function checkNeedHint(){
+      // scrollWidth大于可视宽度代表可以横向滚动，显示提示，否则隐藏
+      const needScroll = scrollEl.scrollWidth > scrollEl.clientWidth;
+      hint.style.display = needScroll ? 'flex' : 'none';
+  }
+  checkNeedHint();
+  window.addEventListener('resize', checkNeedHint);
+})
+
     // 汉堡菜单
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
